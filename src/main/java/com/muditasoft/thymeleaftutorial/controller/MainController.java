@@ -40,6 +40,8 @@ public class MainController {
 		languages.add("Turkish");
 		
 		models.put("languages", languages);
+		
+		models.put("color", "#ccc");
 
 		return "profile";
 	}
