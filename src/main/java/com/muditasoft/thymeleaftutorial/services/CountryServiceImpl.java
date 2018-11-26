@@ -3,6 +3,9 @@ package com.muditasoft.thymeleaftutorial.services;
 import java.util.Map;
 import java.util.TreeMap;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class CountryServiceImpl implements CountryService {
 
 	@Override
