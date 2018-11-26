@@ -28,7 +28,9 @@
 			<td th:utext=${model.description}>Description goes here</td>
 		</tr>
 	</table>
-	
+
+	<img src="project-6.jpg" th:src="@{images/project-6.jpg}"/>
+
 	<h2>Languages spoken</h2>
 	<p>
 		You speak <span th:if="${model.languages.size() &lt; 3}"
