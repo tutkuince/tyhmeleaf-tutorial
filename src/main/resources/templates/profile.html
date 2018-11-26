@@ -54,6 +54,8 @@
 		<!-- Evaluate something like a URL we use @{} -->
 		<a th:href="@{/}" href="homepage.html">Click here</a> to return to the homepage.
 	</p>
+	
+	<div th:replace="fragments/menu :: footer-menu">Footer menu goes here</div>
 
 </body>
 </html>
