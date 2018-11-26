@@ -50,10 +50,8 @@
 					
 					<select id="country" name="country" required="required">
 						<option selected="selected" disabled="disabled">Country</option>
-						<option value="GBR">Great Britain</option>
-						<option value="TR">Turkey</option>
-						<option value="USA">United States of America</option>
-						<option value="ETC">etc.</option>
+						<option th:each="country : ${countries}" th:text="${country.value}" th:value="${country.key}" value="XXX">Country Name</option>
+						
 					</select>
 			</div>
 
