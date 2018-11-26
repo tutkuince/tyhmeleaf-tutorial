@@ -35,7 +35,7 @@
 	</table>
 
 	<img src="project-6.jpg" th:src="@{images/project-6.jpg}"/>
-	<p th:text="${fullname}">Your name</p>
+	<p th:text="${fullname}" style="color:#blue" th:style="'color:' + ${model.color}">Your name</p>
 	
 	
 	<h2>Languages spoken</h2>
