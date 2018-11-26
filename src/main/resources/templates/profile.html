@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>User Profile</h1>
+	<table>
+		<tr>
+			<td>Full Name</td>
+			<!-- <td th:text="${model.get('title') + ' ' + model.get('firstName') + ' ' + model.get('lastName')}">Tutku Ince</td> -->
+			<!-- <td th:text="${model.title + ' ' + model.firstName + ' ' + model.lastName}">Tutku Ince</td> -->
+			
+			<!-- String Concatenating with '|'-->
+			<!-- #strings.toUpperCase()  -->
+			<td th:text="|${model.title}  ${model.firstName} ${#strings.toUpperCase(model.lastName)}|">Tutku Ince</td>
+			<!-- <td th:text="|You are ${model.title}  ${model.firstName} ${model.lastName} and you are most welcome!|">Tutku Ince</td> -->
+		</tr>
+		<tr>
+			<td>Date of Birth</td>
+			<td th:text="${#dates.format(model.dateOfBirth, 'dd-MMM-yyyy')}">15-01-1989</td>
+		</tr>
+		<tr>
+			<td>Description</td>
+			<!-- You can allow inject your html tags with th:utext -->
+			<td th:utext=${model.description}>Description goes here</td>
+		</tr>
+	</table>
+	
+	<h2>Languages spoken</h2>
+	<p>
+		You speak <span th:if="${model.languages.size() &lt; 3}"
+			th:text="${model.languages.size()}">x</span> <span
+			th:if="${model.languages.size() &gt; 2}">3 or more </span> languages
+
+	</p>
+	<p>You speak <span th:text="${model.languages.size() >= 3} ? '3 or more' : ${model.languages.size()}">x</span> languages</p>
+	<ul th:if="${model.languages.size() >= 3}">
+		<li th:each="language : ${model.languages}" th:text="${language}">Language1</li>
+	</ul>
+	
+	<p th:if="${model.languages.size() < 3}"> You speak <span th:each="language : ${model.languages}" th:text="${language} + ' '">language1</span> </p>
+	<!-- <p th:if="${model.languages.size() &lt; 3}"> You speak <span th:each="language : ${model.languages}" th:text="${language} + ' '">language1</span> </p> -->
+	
+	<p>
+		<!-- Evaluate something like a URL we use @{} -->
+		<a th:href="@{/}" href="homepage.html">Click here</a> to return to the homepage.
+	</p>
+
+</body>
+</html>
