@@ -45,4 +45,9 @@ public class MainController {
 
 		return "profile";
 	}
+	
+	@RequestMapping("/addUser")
+	public String addUser() {
+		return "newUser";
+	}
 }
