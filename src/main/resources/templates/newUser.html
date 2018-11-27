@@ -10,9 +10,9 @@
 		
 				<div class="fieldSection">
 					<div class="fieldTitle">Login name &amp; Password</div>
-					<input type="text" name="username" id="username" placeholder="username" required="required" />
-					<input type="password" name="pass1" id="pass1" placeholder="password" required="required" />
-					<input type="password" name="pass2" id="pass2" placeholder="repeat password" required="required" />
+					<input type="text" name="username" id="username" placeholder="username" required="required" th:field="*{user.username}"/>
+					<input type="password" name="pass1" id="pass1" placeholder="password" required="required" th:field="*{user.password}"/>
+					<input type="password" name="pass2" id="pass2" placeholder="repeat password" required="required" th:field="*{user.repeatPassword}"/>
 				</div>
 			<div class="fieldSection">
 				<div class="fieldTitle">Name</div>
