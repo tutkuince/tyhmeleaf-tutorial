@@ -34,16 +34,15 @@ public class MainController {
 		models.put("dateOfBirth", new GregorianCalendar(1989, 1, 15));
 		models.put("description", "a <strong>fantastic</strong> Java programmer");
 
-		model.addAttribute("model", models);
-		
 		List<String> languages = new ArrayList<>();
 		languages.add("English");
 		languages.add("Russian");
 		languages.add("Turkish");
 		
 		models.put("languages", languages);
-		
 		models.put("color", "#ccc");
+		
+		model.addAttribute("model", models);
 
 		return "profile";
 	}
