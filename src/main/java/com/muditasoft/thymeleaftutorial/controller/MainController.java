@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.muditasoft.thymeleaftutorial.models.User;
+import com.muditasoft.thymeleaftutorial.validations.UserValidator;
 
 @Controller
 public class MainController {
@@ -59,6 +60,7 @@ public class MainController {
 	
 	@PostMapping("/saveUser")
 	public String saveUser(@Valid User user, BindingResult bindingResult) {
+		new UserValidator().validate(user, bindingResult);
 		if(bindingResult.hasErrors()) {
 			return "newUser";
 		}
